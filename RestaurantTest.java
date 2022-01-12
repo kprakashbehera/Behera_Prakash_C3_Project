@@ -16,8 +16,10 @@ class RestaurantTest {
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
         //WRITE UNIT TEST CASE HERE
         Restaurant spiedRestaurant = new Restaurant("Amelie's cafe", "Chennai", LocalTime.parse("10:30:00"), LocalTime.parse("22:00:00") );
-        assertFalse(restaurant.getCurrentTime().isAfter(spiedRestaurant.openingTime) && restaurant.getCurrentTime().isBefore(spiedRestaurant.closingTime));
-
+        assertTrue(restaurant.getCurrentTime().isAfter(spiedRestaurant.openingTime) && restaurant.getCurrentTime().isBefore(spiedRestaurant.closingTime));
+        // **
+        // can be implemented this as well
+        // assertTrue(spiedRestaurant.isRestaurantOpen()); ** //
     }
 
     @Test
